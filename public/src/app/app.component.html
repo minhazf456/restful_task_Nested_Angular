@@ -1,0 +1,15 @@
+
+<div id="container">
+  <h1>{{title}}</h1>
+
+      <app-task *ngIf="selectedTask" [taskToShow]="selectedTask"></app-task>
+
+  <div id="btndiv">
+    <button id="gatbtn" (click)="getTasksFromService()" >Get All Tasks</button>
+    <p></p>
+    <div *ngFor="let task of tasks; let idx = index">
+    	<p>{{task.title}}<button id="showbtn" (click)="info(idx)">SHOW</button></p>
+    </div>
+    <app-task *ngIf="selectedTask" [taskToShow]="selectedTask"></app-task>
+  </div>
+</div>
